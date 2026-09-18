@@ -2,8 +2,8 @@
 
 Aplicação de console em TypeScript que lê duas notas por aluno, calcula a média e informa se ele foi aprovado ou reprovado, repetindo o processo enquanto o usuário quiser.
 
-> **Como rodar:** pré-requisitos e instruções completas estão no [README da raiz](../README.md#como-executar-a-aula-1).
-> Resumo rápido: `npm install` e depois `npm run start:dev`.
+> **Como rodar:** pré-requisitos e instruções completas estão no [README do módulo](../../README.md#como-executar).
+> Resumo rápido: `npm install` e depois `npm run aula01`.
 
 ---
 
@@ -172,12 +172,12 @@ A **flag booleana** é o que controla a parada: se ela nunca virasse `false`, te
 
   | Função | Local | Responsabilidade |
   |---|---|---|
-  | `ExibirGuiaPreenchimentoNota` | [src/index.ts:11](src/index.ts#L11) | Instrui o uso do ponto decimal |
-  | `CalcularMedia` | [src/index.ts:15](src/index.ts#L15) | Média aritmética das duas notas |
-  | `ExibirResultadoFinalAluno` | [src/index.ts:19](src/index.ts#L19) | Compara com `NOTA_CORTE` e exibe aprovado/reprovado |
-  | `LoopDeveContinuar` | [src/index.ts:30](src/index.ts#L30) | Pergunta `[S/N]` e devolve se o loop segue |
-  | `ColetaDadosDoAluno` | [src/index.ts:45](src/index.ts#L45) | Lê nome, nota1 e nota2 do terminal |
-  | `main` | [src/index.ts:58](src/index.ts#L58) | Orquestra o loop e fecha o `readline` |
+  | `ExibirGuiaPreenchimentoNota` | [index.ts:11](index.ts#L11) | Instrui o uso do ponto decimal |
+  | `CalcularMedia` | [index.ts:15](index.ts#L15) | Média aritmética das duas notas |
+  | `ExibirResultadoFinalAluno` | [index.ts:19](index.ts#L19) | Compara com `NOTA_CORTE` e exibe aprovado/reprovado |
+  | `LoopDeveContinuar` | [index.ts:30](index.ts#L30) | Pergunta `[S/N]` e devolve se o loop segue |
+  | `ColetaDadosDoAluno` | [index.ts:45](index.ts#L45) | Lê nome, nota1 e nota2 do terminal |
+  | `main` | [index.ts:58](index.ts#L58) | Orquestra o loop e fecha o `readline` |
 
 - **Separação por camada:** entrada (`ColetaDadosDoAluno`), processamento (`CalcularMedia`), saída (`ExibirResultadoFinalAluno`), controle de fluxo (`LoopDeveContinuar`) e orquestração (`main`).
 - **Reúso na prática:** `ExibirGuiaPreenchimentoNota()` é chamada em dois pontos diferentes. Se o texto da instrução mudar, muda em um lugar só.
@@ -186,4 +186,4 @@ A **flag booleana** é o que controla a parada: se ela nunca virasse `false`, te
   import * as readline from 'node:readline/promises';
   import { stdin as input, stdout as output } from 'node:process';
   ```
-- **Próximo passo natural:** quebrar o arquivo único em vários (`calculos.ts`, `entrada.ts`, `saida.ts`) e conectá-los com `export` / `import`.
+- **Próximo passo natural:** quebrar o arquivo único em vários e conectá-los com `export` / `import`. É exatamente o que a [aula 02](../aula02/README.md) faz com este mesmo programa.

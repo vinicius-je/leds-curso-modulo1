@@ -1,98 +1,57 @@
 # LEDS — Curso Módulo 1
 
-Repositório com os códigos e exercícios desenvolvidos durante o Módulo 1 do curso do LEDS. Cada aula fica em sua própria pasta, autocontida e executável de forma independente.
+Repositório com os códigos e exercícios desenvolvidos durante o curso do LEDS.
+
+A organização é **um projeto npm por módulo** do curso. Cada módulo tem seu próprio `package.json` e `tsconfig.json`, e dentro de `src/` fica uma pasta por aula — cada aula com seu código e sua própria documentação.
 
 ---
 
 ## Estrutura do repositório
 
 ```
-leds-curso-modulo1/
+curso/
 ├── .gitignore
-├── README.md
-└── aula01/
-    ├── README.md           # enunciado, exemplo de uso e conceitos da aula 1
-    ├── package.json        # scripts npm e dependências
-    ├── tsconfig.json       # configuração do compilador TypeScript
+├── README.md                     # este arquivo
+└── modulo01/
+    ├── README.md                 # pré-requisitos e como executar as aulas
+    ├── package.json              # scripts npm e dependências do módulo
+    ├── tsconfig.json             # configuração do compilador TypeScript
     └── src/
-        └── index.ts        # código-fonte da aula 1
+        ├── aula01/
+        │   ├── README.md         # conteúdo didático da aula 1
+        │   └── index.ts
+        └── aula02/
+            ├── README.md         # conteúdo didático da aula 2
+            ├── index.ts          # orquestra o fluxo
+            ├── services/         # uma responsabilidade por arquivo
+            └── utils/            # apoio reutilizável (erro customizado)
 ```
 
 ---
 
-## Pré-requisitos
+## Como executar
 
-| Ferramenta | Versão mínima | Versão testada |
-|---|---|---|
-| [Node.js](https://nodejs.org) | 20.x | v20.20.1 |
-| npm | 10.x | 10.3.0 |
+Todas as instruções — pré-requisitos, instalação e os comandos de cada aula — estão em **[modulo01/README.md](modulo01/README.md)**.
 
-Confira o que você tem instalado:
+Resumo rápido:
 
 ```bash
-node --version
-npm --version
-```
-
----
-
-## Como executar a aula 1
-
-### 1. Instalar as dependências
-
-```bash
-cd aula01
+cd modulo01
 npm install
+npm run aula01     # roda a aula 1
+npm run aula02     # roda a aula 2
 ```
-
-### 2. Rodar o programa
-
-**Opção 1 — rodar direto do TypeScript (recomendado)**
-
-```bash
-npm run start:dev
-```
-
-**Opção 2 — modo watch (reinicia sozinho a cada `Ctrl+S`)**
-
-```bash
-npm run dev
-```
-
-**Opção 3 — compilar e rodar o JavaScript gerado**
-
-```bash
-npm run build
-npm start
-```
-
-> ⚠️ **Atenção:** `npm start` executa o arquivo já compilado em `dist/index.js`. Sempre rode `npm run build` antes, senão você acaba executando um build antigo.
-
-**Limpar a pasta de build**
-
-```bash
-npm run clean
-```
-
-### Scripts npm disponíveis
-
-| Script | Comando executado | Para que serve |
-|---|---|---|
-| `npm run start:dev` | `tsx src/index.ts` | Roda o TypeScript direto, sem gerar arquivos |
-| `npm run dev` | `tsx watch src/index.ts` | Igual ao anterior, mas reinicia a cada alteração |
-| `npm run build` | `tsc` | Compila `src/` → `dist/` |
-| `npm start` | `node dist/index.js` | Executa o JavaScript compilado |
-| `npm run clean` | `rimraf dist` | Apaga a pasta `dist/` |
 
 ---
 
-## Conteúdo das aulas
+## Aulas do módulo 1
 
-| Aula | Tema | Documentação |
-|---|---|---|
-| 01 | Cálculo de média de alunos | [aula01/README.md](aula01/README.md) |
+| Aula | Tema | Conceitos | Documentação |
+|---|---|---|---|
+| 01 | Cálculo de média de alunos | Variáveis, alocação de memória, sequência/seleção/repetição, condicionais, funções | [src/aula01/README.md](modulo01/src/aula01/README.md) |
+| 02 | Mesmo sistema, refatorado | Modularização, tratamento de erros, introdução a POO | [src/aula02/README.md](modulo01/src/aula02/README.md) |
 
-> 📚 O enunciado do exercício, um exemplo de execução e todos os conceitos abordados — variáveis, alocação de memória, sequência/seleção/repetição, condicionais, funções e modularização — estão em **[aula01/README.md](aula01/README.md)**.
+> 📚 A aula 02 continua de onde a aula 01 parou: o mesmo programa de média, agora quebrado em vários arquivos, com validação de entrada via `try`/`catch` e uma classe de erro própria.
 
 ---
 
