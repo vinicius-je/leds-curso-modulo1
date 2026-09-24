@@ -6,6 +6,7 @@ Projeto npm que hospeda todas as aulas do módulo 1. Cada aula é uma pasta em `
 |---|---|---|---|
 | 01 | Cálculo de média de alunos | `npm run aula01` | [src/aula01/README.md](src/aula01/README.md) |
 | 02 | Modularização, tratamento de erros e POO | `npm run aula02` | [src/aula02/README.md](src/aula02/README.md) |
+| 03 | Pilares da POO: contas bancárias e meios de pagamento | `npm run aula03` | [src/aula03/README.md](src/aula03/README.md) |
 
 ---
 
@@ -43,6 +44,7 @@ npm install
 ```bash
 npm run aula01     # aula 1
 npm run aula02     # aula 2
+npm run aula03     # aula 3
 ```
 
 **Opção 2 — modo watch (reinicia sozinho a cada `Ctrl+S`)**
@@ -50,14 +52,16 @@ npm run aula02     # aula 2
 ```bash
 npm run aula01:watch
 npm run aula02:watch
+npm run aula03:watch
 ```
 
 **Opção 3 — compilar e rodar o JavaScript gerado**
 
 ```bash
-npm run build          # compila as duas aulas de uma vez: src/ → dist/
+npm run build          # compila todas as aulas de uma vez: src/ → dist/
 npm run start:aula01
 npm run start:aula02
+npm run start:aula03
 ```
 
 > ⚠️ **Atenção:** `npm run start:aula0X` executa o arquivo já compilado em `dist/`. Sempre rode `npm run build` antes, senão você acaba executando um build antigo.
@@ -78,9 +82,12 @@ npm run clean
 | `npm run aula01:watch` | `tsx watch src/aula01/index.ts` | Igual ao anterior, mas reinicia a cada alteração |
 | `npm run aula02` | `tsx src/aula02/index.ts` | Roda a aula 2 direto do TypeScript |
 | `npm run aula02:watch` | `tsx watch src/aula02/index.ts` | Aula 2 em modo watch |
+| `npm run aula03` | `tsx src/aula03/poo/index.ts` | Roda a aula 3 direto do TypeScript |
+| `npm run aula03:watch` | `tsx watch src/aula03/poo/index.ts` | Aula 3 em modo watch |
 | `npm run build` | `tsc` | Compila `src/` → `dist/`, preservando a pasta de cada aula |
 | `npm run start:aula01` | `node dist/aula01/index.js` | Executa o JavaScript compilado da aula 1 |
 | `npm run start:aula02` | `node dist/aula02/index.js` | Executa o JavaScript compilado da aula 2 |
+| `npm run start:aula03` | `node dist/aula03/poo/index.js` | Executa o JavaScript compilado da aula 3 |
 | `npm run clean` | `rimraf dist` | Apaga a pasta `dist/` |
 
 ---

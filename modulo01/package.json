@@ -7,9 +7,12 @@
     "aula01:watch": "tsx watch src/aula01/index.ts",
     "aula02": "tsx src/aula02/index.ts",
     "aula02:watch": "tsx watch src/aula02/index.ts",
+    "aula03": "tsx src/aula03/poo/index.ts",
+    "aula03:watch": "tsx watch src/aula03/poo/index.ts",
     "build": "tsc",
     "start:aula01": "node dist/aula01/index.js",
     "start:aula02": "node dist/aula02/index.js",
+    "start:aula03": "node dist/aula03/poo/index.js",
     "clean": "rimraf dist"
   },
   "keywords": [],
